@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "232383790803",
+    "project_id": "ci-cd-pipline-ea5aa",
+    "storage_bucket": "ci-cd-pipline-ea5aa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232383790803:android:090b09b8775af124969e26",
+        "android_client_info": {
+          "package_name": "com.example.ci_cd_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnGr2B-7R3FFruHuDSL3GUrQ5STzK--rE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
