@@ -15,10 +15,7 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.ci_cd_test"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -26,10 +23,31 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            // Debug-specific config goes here.
+        }
+        getByName("release") {
             // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+
+    flavorDimensions += "default"
+    productFlavors {
+        create("development") {
+            dimension = "default"
+            applicationIdSuffix = ".dev"
+            resValue("string", "app_name", "CI CD Test Dev")
+        }
+        create("staging") {
+            dimension = "default"
+            applicationIdSuffix = ".staging"
+            resValue("string", "app_name", "CI CD Test Staging")
+        }
+        create("production") {
+            dimension = "default"
+            // No suffix — keeps the Play Store ID clean.
+            resValue("string", "app_name", "CI CD Test")
         }
     }
 }
